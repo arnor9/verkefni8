@@ -51,11 +51,10 @@ document.querySelector('#max_cups').innerText = MAX_NUM_OF_CUPS;
 /*ball.css*/
 function onCupClick(e) {
   const num = e.target.dataset.num;
-  const ball = document.createElement('div');
-  ball.classList.add('cup__ball');
- /* const B = document.createElement('div');
-  B.classList.add();
-  B.appendChild()*/
+  /*
+  ball.classList.add('cup__ball');*/
+  /*const showBall = document.querySelector('.ball');
+  const B = document.createElement('div');*/
 
   if(num != state.currentCup){
     let c = e.target.closest('.cup');
@@ -65,10 +64,18 @@ function onCupClick(e) {
   else{
     const c = e.target.closest('.cup');
     c.removeChild(c.firstChild);
-    ball.appendChild(ball.firstChild);
+    /*B.classList.add('cup');
+    B.appendChild(showBall);
+    showBall.appendChild(ball.firstChild);*/
     console.log('réttur bolli');
+    points = points + (valueAsNumber - 1);
   }
+  /*played = played + 1;*/
 }
+
+
+
+
 
 /**
  * Tæmir `parent` og býr til `num` bollum og setur þangað inn.
@@ -117,6 +124,11 @@ function onFormSubmit(e) {
     formError.classList.remove('form__error--hidden');
   }
 }
+/* Er hérna að reyna að uppfæra stigatöfluna.*/
+/*function result(){
+  stig = document.getElementById('points');
+  stig.value = 'points';
+}*/
 /*
 function removeCup(e){
 const c = document.querySelector('.cups:nth-child('+e+')');
